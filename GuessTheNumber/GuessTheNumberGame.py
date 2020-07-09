@@ -1,11 +1,12 @@
 import random
 
-num = random.randrange(1,50)
-guess = int(input("Guess a number between 1 and 50: "))
+try:
+    num = random.randrange(1,50)
+    guess = int(input("Guess a number between 1 and 50: "))
 
 
-while guess != num:
-    try:
+    while guess != num:
+
         if guess < num:
             print("You need to guess higher. Try again")
             guess = int(input("Guess a number between 1 and 50: "))
@@ -18,10 +19,13 @@ while guess != num:
             print("You need to guess lower. Try again")
             guess = int(input("Guess a number between 1 and 50: "))
 
-    except ValueError:
-        raise SyntaxError("Sorry, please enter a number.")
-        guess = int(input("Guess a number between 1 and 50: "))
+    print("\nWoo you guessed the number correctly! :)")
 
-print("\nWoo you guessed the number correctly! :)")
+except ValueError:
+   print("please enter a digit")
+   guess = int(input("Guess a number between 1 and 50: "))
+
+
+
 
 
